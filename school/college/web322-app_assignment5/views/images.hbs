@@ -1,0 +1,15 @@
+<div class="row">
+<div class="col-md-12">
+ <h2>Images</h2>
+ <hr />
+ </div>
+ <div class="col-md-4">
+     {{#each images}}
+        <img src="/images/uploaded/{{this}}" class="img-responsive img-thumbnail" />
+      {{else}}
+        <div class="col-md-12 text-center">
+ <strong>No Images Available</strong>
+</div>
+     {{/each}}
+ </div>
+</div>

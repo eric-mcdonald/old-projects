@@ -1,0 +1,43 @@
+<div class="row">
+ <div class="col-md-12">
+ <h2>Employees</h2>
+ <hr />
+        <div class="table-responsive">
+        <table class="table ">
+            <thead>
+            <tr>
+                <th>Employee&nbsp;Num</th>
+                <th>Full&nbsp;Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Manager&nbsp;ID</th>
+                <th>Status</th>
+                <th>Department</th>
+                <th>Hired&nbsp;On</th>
+            </tr>
+            </thead>
+            <tbody>
+     {{#each employeeList}}
+        <tr>
+                         <td>{{employeeNum}}</td>
+                    <td><a href="/employee/{{employeeNum}}">{{firstName}} {{lastName}}</a></td>
+                    <td><a href="mailto:{{email}}">{{email}}</a></td>
+                    <td>{{addressStreet}} {{addressCity}} {{addressState}} {{addressPostal}}</td>
+                    {{#if isManager}}
+                        <td><a href="/employees?manager="></a></td>
+                    {{else}}
+                        <td><a href="/employees?manager={{employeeManagerNum}}">{{employeeManagerNum}}</a></td>
+                    {{/if}}
+                    <td><a href="/employees?status={{status}}">{{status}}</a></td>
+                    <td><a href="/employees?department={{department}}">{{department}}</a></td>
+                    <td>{{hireDate}}</td>
+                    </tr>
+     {{else}}
+     <div class="col-md-12 text-center">
+ <strong>{{message}}</strong>
+</div>
+     {{/each}}
+     </tbody>
+     </table>
+ </div>
+</div>
