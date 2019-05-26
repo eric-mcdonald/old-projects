@@ -1,0 +1,21 @@
+﻿  stdafx.cpp
+  cmd_impl.cpp
+  command.cpp
+  email.cpp
+  IRCClient.cpp
+  IRCHandler.cpp
+  IRCSocket.cpp
+  key_logger.cpp
+  logger.cpp
+  main.cpp
+  native_utils.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\um\dbghelp.h(1544): warning C4091: 'typedef ': ignored on left of '' when no variable is declared
+C:\Program Files (x86)\Windows Kits\8.1\Include\um\dbghelp.h(3190): warning C4091: 'typedef ': ignored on left of '' when no variable is declared
+  routine.cpp
+  routine_impl.cpp
+  Thread.cpp
+  Generating code
+  All 876 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  orion-client.vcxproj -> C:\Users\eric_\OneDrive\Documents\Visual Studio 2015\Projects\orion\orion-client\Release\orion-client.exe
+  orion-client.vcxproj -> C:\Users\eric_\OneDrive\Documents\Visual Studio 2015\Projects\orion\orion-client\Release\orion-client.pdb (Full PDB)

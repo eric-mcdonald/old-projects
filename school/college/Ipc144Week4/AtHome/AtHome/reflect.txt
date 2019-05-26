@@ -1,0 +1,37 @@
+1) In one or two sentences explain why the arrays in this program have to be declared to hold 10 elements?
+It needs to be declared to hold 10 elements because the amount of elements needs to be a constant for the compiler to know how many bytes to allocate to the stack/heap, depending on where you initialize the array. Although, I decided to declare a variable-sized array by allocating a pointer, since they are laid out the same in memory.
+2) In two or three sentences explain the advantages and disadvantages of using matching arrays?
+The advantages of using parallel arrays is that they are slightly more efficient than using a structure to hold your variables most of the time, since you are eliminating extra code to execute on assembler's level:
+1. For example, setting an element inside my high_temperatures array may look like this in C:
+high_temperatures[5] = 56; // Assume position 5 of the array is at ESP + sizeof(int) * 5
+
+and this in x86 ASM:
+# Assume the array is allocated onto the stack (ESP register). Mine is actually allocated on the heap because of malloc, but it's easier for me to write out the machine code if I pretend it's on ESP.
+# high_temperatures's address on MSVC would probably be ESP, and it's end would be ESP + sizeof(int) * high_temperatures_len
+# ESP would be the beginning of the array.
+# I written this machine code off the top of my head; it might be inaccurate.
+push 56
+mov EAX,ESP+40 # Assuming ESP+40 is the beginning of the last value on the stack, and that my high_temperatures array is 10 elements long.
+mov ESP,EAX
+
+2. and this if there is one array that uses a structure as it's elements:
+in C:
+struct Day {
+	int high_temperature, low_temperature;
+};
+temperatures[5].high_temperature = 56;
+in x86 ASM:
+push 56
+# dword ptr [address] is the equivalent of dereferencing an integer pointer in C, or at least on all 32-bit Windows programs.
+mov EAX,dword ptr [ESP+40]
+mov ESP,EAX
+# Although no extra opcodes are being executed, the CPU is still doing more work since usually it is optimized to just take the first 4 bytes at ESP+40. The dword ptr [ESP+40] size directive is read by the CPU, making your code ever so slightly slower.
+
+Therefore, the 1st way is slightly faster because there is no need to read a size directive.
+
+* After having to reverse engineer video games like crazy to make hacks for them & cracking programs, I have become a grandmaster of translating C/C++ code into x86 ASM and back which is why I know this. *
+
+A disadvantage of using parallelism in arrays is that your code can become brittle if you need to add a type of element. With parallel arrays, you would need to allocate and implement a new array for the new type of element, but with a structure you can just add & implement the element inside of it.
+
+3) Was the at home portion of this workshop too easy, just right or too hard? Why?
+I found it easy because I already know all of this. But if I was new to C language, it would be just right, since I would've learned that an array must be allocated with a constant number of elements or at least as a pointer via malloc. If I was completely new to computer programming, this would be hard for me to understand, since I recall being bad at using/looking at counters in for-loops and while-loops when I first started.

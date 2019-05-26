@@ -1,0 +1,23 @@
+﻿  Building 'lanius-driver' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Release\lanius-driver.inf [Version] section with DriverVer=04/27/2018,21.20.5.67
+  driver.c
+  lanius-driver.vcxproj -> D:\lanius\lanius-driver\x64\Release\lanius-driver.sys
+  lanius-driver.vcxproj -> D:\lanius\lanius-driver\x64\Release\lanius-driver.pdb (Full PDB)
+  Done Adding Additional Store
+  Successfully signed: D:\lanius\lanius-driver\x64\Release\lanius-driver.sys
+  
+  Driver is a Universal Driver.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  D:\lanius\lanius-driver\x64\Release\lanius-driver\lanius-driver.cat
+  Done Adding Additional Store
+  Successfully signed: D:\lanius\lanius-driver\x64\Release\lanius-driver\lanius-driver.cat
+  

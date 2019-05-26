@@ -1,0 +1,20 @@
+1. The reason for using the vector container rather than any other available in the STL.
+I used a vector instead of another STL container because I just needed a resizable array (which is pretty much what vector is):
+
+products.push_back(product);  // push_back resizes the underlying array to be bigger and copies the passed element to the array.
+
+2. Why there is no need to deallocate the dynamically allocated memory in your own code.
+There is no need to deallocate the container/array because the STL vector class manages its underlying dynamically-allocated array's memory by itself:
+
+std::vector<iProduct*> products;  // Eric McDonald: Does not have to be deallocated in the Sale destructor.
+
+3. How the range-based for simplifies coding in this case.
+The range-based for/enhanced for-loop means that instead of typing:
+
+for (std::vector<iProduct*>::iterator it = products.begin(); it != products.end(); ++it)
+
+I can simply write:
+
+for (auto &it : products)
+
+Which looks a lot cleaner and is less cluttered. It also means if I wanted to change the vector's template parameter, I wouldn't have to change it in the loop, as its just using the 'auto' keyword.

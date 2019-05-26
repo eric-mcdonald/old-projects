@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+  lanius-test-injected-dll.cpp
+d:\lanius\lanius-test-injected-dll\lanius-test-injected-dll\dllmain.cpp(12): error C2360: initialization of 'test_file' is skipped by 'case' label
+  d:\lanius\lanius-test-injected-dll\lanius-test-injected-dll\dllmain.cpp(8): note: see declaration of 'test_file'
+d:\lanius\lanius-test-injected-dll\lanius-test-injected-dll\dllmain.cpp(13): error C2360: initialization of 'test_file' is skipped by 'case' label
+  d:\lanius\lanius-test-injected-dll\lanius-test-injected-dll\dllmain.cpp(8): note: see declaration of 'test_file'
+d:\lanius\lanius-test-injected-dll\lanius-test-injected-dll\dllmain.cpp(14): error C2360: initialization of 'test_file' is skipped by 'case' label
+  d:\lanius\lanius-test-injected-dll\lanius-test-injected-dll\dllmain.cpp(8): note: see declaration of 'test_file'

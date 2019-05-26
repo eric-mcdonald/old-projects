@@ -1,0 +1,16 @@
+[
+{
+  "modid": "monumental",
+  "name": "Monumental",
+  "description": "High quality cheats for Minecraft.",
+  "version": "1.0",
+  "mcversion": "1.8",
+  "url": "http://www.hackforums.net/member.php?action=profile&uid=1780281",
+  "updateUrl": "",
+  "authorList": ["pootPoot"],
+  "credits": "pootPoot for making the mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

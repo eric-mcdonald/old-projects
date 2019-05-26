@@ -1,0 +1,16 @@
+﻿  stdafx.cpp
+  font.cc
+  game.cc
+  lanius.cpp
+  memory_stream.cc
+  native_util_test.cc
+  native_util.cc
+  overlay.cc
+  render_data.cc
+  string_util.cc
+  window_rect.cc
+  Generating code
+  All 339 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  lanius.vcxproj -> D:\lanius\lanius\x64\Release\lanius.exe
+  lanius.vcxproj -> D:\lanius\lanius\x64\Release\lanius.pdb (Full PDB)

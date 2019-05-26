@@ -1,0 +1,27 @@
+Name: Eric McDonald
+Student ID: 153581160
+Date: 2019-03-21
+
+1. The reason for using the vector container rather than any other available in the STL.
+I used vector because it maintains the order of the elements by how you inserted them. So, the element I added first will be the first element until I sort it:
+coords.push_back(std::pair<CoordType, CoordType>(x, y));  // Until I sort the 'coords' container, the order of elements is maintained as such that the 1st elements inserted will appear first.
+
+Also, I made the element type std::pair<CoordType, CoordType> rather than having two std::vector<CoordType> to enforce that each x-value should have a corresponding y-value.
+
+2. List the STL template functions that you used in your solution.
+I used 'std::sort' to get the median, 'accumulate' to get the mean x and y values, 'std::vector#push_back' to add elements to the vector:
+
+std::sort(sorted_coords.begin(), sorted_coords.end(), SortCoordsByY);  // This way, I can get sorted_coords[sorted_coords.size() / 2].second for the y-median.
+
+float x_mean = accumulate(x_vals.begin(), x_vals.end(), 0.0F) / vals_sz, y_mean = accumulate(y_vals.begin(), y_vals.end(), 0.0F) / vals_sz;  // For the mean values.
+
+coords.push_back(std::pair<CoordType, CoordType>(x, y));  // To add elements to 'coords' vector.
+
+3. Identify where you used lambda expressions.
+I did not use any lambda expressions.
+
+4. Comment on the ease of programming associated with the STL.
+Programming using the STL is nice because I don't need to do things like managing a dynamically allocated array, for example. Managing an array to do the same thing would mean having to allocate the array, resize it whenever I needed to add an element, and destroy it in DataTable's destructor. Also, I would have to follow the rule of five to make sure the memory is managed correctly: https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)#Rule_of_Five
+Instead of all that, I can just use C++'s vector class. Also, the STL has a nice collection of other useful utilities, such as std::sort or accumulate.
+
+There are no quiz corrections to mention here.

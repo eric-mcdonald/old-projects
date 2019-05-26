@@ -1,0 +1,30 @@
+*** This program requires you to have basic knowledge of C. ***
+
+
+How to use this program:
+
+1. When you create a new project, Copy all .c from this folder into the project's Source category. Copy all .h files into the Headers category.
+2. Allow main_bridge.c to contain the actual main function (rename/remove any other present main functions).
+3. Declare your 'main function' in main_impl_defs.h. Implement them in your own files. *+
+4. Register your 'main function' pointer in main_bridge.c *+
+
+* There are some TODO comments labeled as "TODO:". You should read and follow these accordingly.
++ You may declare and register multiple 'main functions'.
+
+Example:
+
+In main_impl_defs.h:
+int ExampleDeclMain(int argc, char *argv[]);
+
+In your_impl_file.c:
+int ExampleDeclMain(int argc, char *argv[]) {
+	// Do something.
+	return 0;
+}
+
+Then, in main_bridge.c's main function (before the call to PromptMain):
+RegisterMain(ExampleDeclMain);
+
+The program will prompt you for a 'main function ID'. The ID of your main function is determined by the order of successful calls to RegisterMain. Zero (0) is the first ID. ID's can range from 0 to kMaxRegisteredMains - 1 (defined in main_bridge.h).
+
+Any error codes related to the program will have a base of MAIN_ERROR_BASE (defined in main_bridge.h)

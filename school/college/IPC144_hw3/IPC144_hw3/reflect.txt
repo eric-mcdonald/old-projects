@@ -1,0 +1,8 @@
+1-	What do think is the most important thing you learned in this workshop?
+The most important thing I learned from this workshop is that operator precedence matters whilst casting values.
+2-	Why must you add .005 to the value derived when calculating the GST owing?
+You must add .005 to avoid precision errors (aka truncating a value to something that is probably lower).
+3-	What is the result of a casting operation?
+Casting a value can have different results depending on what you are casting to. For example, when you cast a floating-point number to an integer, all decimal places are removed. It is mathematically the same as using C's floor function (defined in math.h). All cast operations force the compiler to convert a value to another data type.
+4-	Why do you think you were required to use the modulus operator in this workshop?
+Honestly, I found that I was writing more code than if I didn't use it. But, my best guess is to show the class how it won't produce negative numbers if both operands are positive.

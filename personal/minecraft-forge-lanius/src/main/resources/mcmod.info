@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lanius",
+  "name": "Lanius",
+  "description": "NoCheatPlus-compatible cheat mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://bitbucket.org/eric_ptr/minecraft-forge-lanius",
+  "updateUrl": "",
+  "authorList": ["Eric"],
+  "credits": "Eric, for making this cheat",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

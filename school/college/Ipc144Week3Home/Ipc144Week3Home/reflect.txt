@@ -1,0 +1,8 @@
+1) Name all the iteration constructs.
+The iteration constructs that exist in C are: do-while loop, for loop, while loop.
+
+2) In two or three sentences explain the difference between a “do while” and a “while” loop?
+A do-while loop will execute the code in the loop first and then check if the condition is a non-zero value (in other words, if the condition is true). A while loop will check the condition first and then execute the code.
+
+3) In two or three sentences explain what is meant by the term conditional expression?
+A conditional expression is code that executes on a condition. For example, all loops in C will continue to execute only if the condition returns a non-zero value; so they are all conditional expressions.

@@ -1,0 +1,19 @@
+{
+  "name": "practical4",
+  "author": "Eric McDonald",
+  "dependencies": {
+    "express": "^4.16.4",
+    "npm": "^6.9.0",
+    "pg": "^6.4.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.43.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "license": "ISC",
+  "description": ""
+}

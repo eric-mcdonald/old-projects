@@ -1,0 +1,98 @@
+vi tutorial #5: Tricks and Timesavers
+
+This lesson lasts 5-10 minutes.  You should have a strong
+understanding of tutorials #1-3 before working through these timesaving
+techniques.  Lines which begin with  >>>  mark exercises you should
+try.  When you want to exit this tutorial type  :q!
+
+
+REPEAT LAST COMMAND
+-------------------
+Often you want to make the same change at multiple locations in the
+file.  To help accomplish this, vi remembers your previous action.
+
+	.	(dot) repeat last change
+
+>>> Go through the example below changing "FISH" to "TOAD":
+>>>	Go to the "F" in the first instance of "FISH"
+>>>	To change the word:  type  cw  then type  TOAD  then press ESC
+>>>     Move the cursor to "F" in the second occurence of "FISH"
+>>>     Type  .  (dot)
+>>>     Move the cursor to "F" in the final occurence of "FISH"
+>>>     Type  .  (dot)
+>>>     Now move the cursor to each occurence of "CROW";  Type  .  (dot)
+
+	EXAMPLE:  The FISH fed the cat.  The CROW fed the cat.  Example
+	text is FISH to make interesting.  The man fed the CROW.  The
+	worm fed the FISH.  Example text is hard to make CROW.  END.
+
+>>> Go through the example above deleting all occurences of "TOAD":
+>>>     Move to the beginning of the EXAMPLE paragraph above.
+>>>     Type  /TOAD  and press RETURN (recall tutorial #2)
+>>>	Delete the word by typing  dw
+>>>     Type  n  to move to the next occurence of "TOAD"
+>>>     Type  .  (dot) to repeat the  dw  command
+>>>     Use  n.  to delete the remaining "TOAD"s
+
+Note that  .  only repeats changes, not cursor movements.
+
+
+WINDOW ACTIONS
+--------------
+You are already familiar with the  ^U  (depress the control key and
+type u) and ^D  commands from tutorial #1.
+
+	^D	Move DOWN one half-screen
+	^U	Move UP one half-screen
+
+There are several related commands:
+
+	^F	Move FORWARD one full-screen
+	^B	Move BACKWARD one full-screen
+
+SUSPENDING VI
+-------------
+Here is a way to go back and forth between vi and the Unix command
+line:
+
+	^Z	Suspend this job and return to the Unix command line
+	fg	(foreground) Continue the suspended job
+
+With this pair of commands you can SUSPEND the vi session, do something
+from the Unix command line, then resume the suspended session by
+typing  fg  at the command line.  Note that  fg  stands for foreground.
+
+Read these instructions CAREFULLY before suspending vi.
+>>>     (Imagine you have an urge to type  ls  at the command line).
+>>>     Type  ^Z  to suspend vi.
+>>>     At the command line type  ls  and then  fg  to foreground vi.
+
+If your shell does not support job control, e.g. /bin/sh, then the ^Z
+command will beep instead of suspending vi.
+
+
+SUMMARY
+-------
+
+	.	(dot) repeat last change
+
+	^D      Move DOWN one half-screen
+		(depress the control key and type d)
+
+	^U      Move UP one half-screen
+		(depress the control key and type u)
+
+	^F	Move FORWARD one full-screen
+
+	^B	Move BACKWARD one full-screen
+
+	^Z	Suspend this job and return to the Unix command line
+
+	fg	(foreground) Continue the suspended job
+
+These commands should significantly speed up your editing. Have a nice
+day.
+
+If you wish to exit this tutorial, type  :q!
+
+Copyright (c) 1992 Jill Kliger and Wesley Craig.  All Rights Reserved.

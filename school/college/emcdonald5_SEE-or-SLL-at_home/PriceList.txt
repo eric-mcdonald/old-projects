@@ -1,0 +1,4 @@
+Soap 1.29
+Detergent 3.49
+Lysol 3.59
+Kleenex 0.50

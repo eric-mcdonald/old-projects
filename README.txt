@@ -1,0 +1,1 @@
+This is a collection of projects I have written over the years. Please keep in mind some of these projects are extremely old, and are not an accurate representation of my current computer programming skills.

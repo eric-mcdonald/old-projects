@@ -1,0 +1,1 @@
+java -jar say-cmd-gen.jar false input.txt command_spammer.txt

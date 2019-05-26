@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  dllmain.cpp
+  lanius-test-injected-dll.cpp
+  lanius-test-injected-dll.vcxproj -> D:\lanius\lanius-test-injected-dll\x64\Debug\lanius-test-injected-dll\lanius-test-injected-dll.dll
+  lanius-test-injected-dll.vcxproj -> D:\lanius\lanius-test-injected-dll\x64\Debug\lanius-test-injected-dll\lanius-test-injected-dll.pdb (Partial PDB)

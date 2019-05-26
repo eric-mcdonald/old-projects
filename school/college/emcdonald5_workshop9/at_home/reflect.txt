@@ -1,0 +1,62 @@
+Student name: Eric McDonald
+Student ID: 153581160
+Date: 2019-04-03
+
+1. Binary file operations
+To read from a binary file, you must open a std::ifstream with ios::binary in the mode (also need to include ios::in). Then, you can call a function like 'read' to read the specified amount of bytes from the file. To write in binary mode, you would use std::ofstream and 'write' function to write a buffer of bytes to a file. By default I/O operations are written in ASCII characters. You may use 'seekg' and 'tellg' to retrieve thr length of the file like so:
+file.seekg(0, ios::end);
+size_t file_sz = file.tellg();
+unsigned char *byte_buf = new unsigned char[file_sz];
+file.seekg(0, ios::beg);
+2. Binding a function to its arguments
+std::bind returns a functor from the function and its arguments. A functor is nice because you can use a function and its arguments as an object. std::bind creates a functor for you (you do not have to define a functor class). Binding a function/creating a functor means you are giving the function a state/you are using certain values as its parameters. std::bind can make your code less-ugly as you don't have to define the functor yourself.
+3. Multi-threading
+Multi-threading is when you have two or more 'processes' (threads) executing concurrently. Multi-threading can be useful for optimizing your code's execution speed. For example, I once had to write some code that downloads a few executable files to later execute them (the following is an example of multi-threading from my Java project though): 
+				logger.log("Downloading offset dumpers.", Logger.Type.INFO);
+				final Thread[] dlThreads = new Thread[offsetsRegistry.objects().size()];
+				for (int i = 0; i < dlThreads.length; i++) {
+					dlThreads[i] = offsetsRegistry.objects().get(i).downloadThread();
+					dlThreads[i].start();
+				}
+				boolean allDone;
+				do {
+					allDone = true;
+					for (final Thread dlThread : dlThreads) {
+						if (dlThread.isAlive()) {
+							allDone = false;
+							break;
+						}
+					}
+				} while (!allDone);
+These executable files were pretty big. If I did not create threads to download them and just use the main thread, it would block further execution for way too long. It would annoy the user. Multi-threading allows the main thread to continue executing, and speed up your code since it does not block the main thread.
+To create and start a thread in C++, you do:
+
+std::thread my_cool_thread(MyCoolFunction, my_cool_arg1, my_cool_arg2_and_so_forth);
+// To check if it's running, you do:
+if (my_cool_thread.joinable()) {
+	// The thread has started and is running if this block executes.
+	my_cool_thread.join();  // Waits for the thread to finish executing and shutdown.
+}
+
+On versions of C++ before C++11, you have to use OS-specific functions to create a thread. On Windows, you can also create a thread via WinAPI's CreateThread or CreateRemoteThread functions. Also, in certain cases like creating a thread in WinAPI's DllMain (the STL implementation will cause a deadlock), you may have to create the thread via Windows functions:
+
+struct MyCoolArgs {  // This structure needs to exist because WinAPI threads can only take one argument.
+	WhateverType my_cool_arg1;
+	WhateverType my_cool_arg2;
+}
+
+MyCoolArgs *my_cool_args = new MyCoolArgs();  // Needs to be allocated on the heap because my_cool_args would be corrupted once the containing function is done executing (if it was allocated on the stack).
+my_cool_args->my_cool_arg1 = my_local_cool_arg1;
+my_cool_args->my_cool_arg2 = my_local_cool_arg2;
+HANDLE my_cool_thread = CreateThread(NULL, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(MyCoolFunction), reinterpret_cast<LPVOID>(my_cool_args), 0, NULL);
+// To check if it's running, you do:
+if (my_cool_thread != NULL) {
+	// The thread has started and is running if this block executes.
+	WaitForSingleObject(my_cool_thread, INFINITE);  // Waits for the thread to finish executing and shutdown.
+}
+CloseHandle(my_cool_thread);
+my_cool_thread = INVALID_HANDLE_VALUE;
+delete my_cool_args;
+my_cool_args = nullptr;
+
+There are no quiz corrections to make.

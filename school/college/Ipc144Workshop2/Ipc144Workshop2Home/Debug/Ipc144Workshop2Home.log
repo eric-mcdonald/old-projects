@@ -1,0 +1,5 @@
+﻿  cashRegister.c
+c:\users\eric_\onedrive\documents\visual studio 2015\projects\schoolprojects\ipc144workshop2\ipc144workshop2home\cashregister.c(18): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+  Ipc144Workshop2Home.vcxproj -> C:\Users\eric_\OneDrive\Documents\Visual Studio 2015\Projects\SchoolProjects\Ipc144Workshop2\Debug\Ipc144Workshop2Home.exe
+  Ipc144Workshop2Home.vcxproj -> C:\Users\eric_\OneDrive\Documents\Visual Studio 2015\Projects\SchoolProjects\Ipc144Workshop2\Debug\Ipc144Workshop2Home.pdb (Full PDB)

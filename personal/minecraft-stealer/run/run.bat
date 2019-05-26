@@ -1,0 +1,1 @@
+java -jar minecraft-stealer.jar versions

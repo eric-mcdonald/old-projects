@@ -1,0 +1,179 @@
+vi tutorial #3: Copying, Cutting, and Pasting
+
+This lesson lasts 10-15 minutes.  This tutorial assumes full knowledge
+of tutorial #1, and familiarity with tutorial #2.  Lines which begin
+with  >>>  mark exercises you should try.
+
+When you want to exit this tutorial type  :q!<RETURN>  to exit without
+saving changes.  Remember that typing  u  will UNDO your last change.
+
+
+CUTTING TEXT
+------------
+The delete command can be combined with any of the movement commands
+taught throughout tutorial #2.  The resulting command is of the form:
+
+    dmovement	DELETE to where the movement command specifies
+
+Consider the following examples:
+
+	dw	DELETE to the beginning of the next WORD
+	d$	DELETE to the end of the line
+	d)	DELETE to the beginning of the next sentence 
+	dd	DELETE a line (dd is a special case of the d command)
+
+>>>  Experiment with  dw  d$  d)  dd  on the paragraph provided below:
+
+    PRACTICE here.  Now is the time for all good users to learn the
+    editor.  The quick brown fox jumped over the seven lazy fish.  Now
+    is the time for all good users to learn the editor.  The quick
+    brown computer jumped over the seven lazy users.  END PRACTICE
+
+
+PASTING TEXT
+------------
+When text is deleted it is put into a buffer which contains the most
+recently deleted text.  To paste the contents of this buffer elsewhere
+in the file use the  p  or  P  command.
+
+	P	(upper p) PUT the contents of the buffer before the cursor
+	p	(lower p) PUT the contents of the buffer after the cursor
+
+>>>  Try this sequence of commands on the practice lines below:
+>>>	dd	to delete the first line
+>>>	}	to move to the end of the paragraph
+>>>	p	(lower p) to PUT the deleted text after the cursor
+
+	PRACTICE line.  Cut and Paste this line to the bottom of the
+	paragraph.  Here is some filler, feel free to cut and paste the
+	text in this practice region.  Remember that  u  undoes the last
+	action.  END OF PRACTICE
+
+>>>  Try this sequence of commands at the beginning of a word:
+>>>	dw  w  P
+
+The fastest way to swap two letters is to type:  xp
+
+>>>  Use  xp  to correct the misspelled words below:
+
+	PRACTICE.  Their weird quiet recieved an inconvenient shriek.
+	Thier belief is that to recieve grief from nieghbors outwieghs
+	all else.  Biege skies lead to wierd science.  END.
+
+
+NUMBERING
+---------
+Consider cutting and pasting 3 words.  Based on previous exercises you
+would type  dw , move to the new location, and type  p , and repeat
+this procedure twice more.  There is an easier way to do this:
+
+>>>  Using the practice lines below, try the following sequence of commands:
+>>>    Move to the beginning of the first sentence.
+>>>    Type  d3w  to DELETE 3 WORDS.
+>>>    Type  w  to move ahead one WORD. 
+>>>    Type  P  (upper p) to PUT the three words before the cursor.
+
+    PRACTICE Numbering vi commands is easy to do.  Now is the time for
+    all good users to learn the editor.  The quick brown fox jumped
+    over the seven lazy dogs.  Numbering vi commands is easy to do.
+    Now is the time for all good users to learn the editor. END PRACTICE
+
+>>>  Type  d2d  to DELETE 2 lines, using the practice paragraph above.
+>>>  Move to the top of the paragraph.
+>>>  Type  p  (lower p) to PUT the two lines after the cursor.
+
+Numbering also works for movement commands.
+
+>>>  Now try  4w  to move ahead 4 WORDs, on the lines provided above.  
+>>>  Then use  3b  to move BACK 3 words.
+
+When you type  4w  THINK "4 words", when you type  d4w  think "delete 4
+words".  In general, we can write
+
+    #movement	repeat movement # times
+    d#movement	DELETE to where the  #movement  command specifies
+
+
+COPYING TEXT
+------------
+The YANK command works just like the DELETE command, except  y  is used
+instead of  d  .
+
+    ymovement	YANK to where the movement command specifies
+
+YANK and DELETE are identical except that YANK only copies the specified
+text into the buffer.
+
+>>>  Try this sequence of commands on the practice lines below:
+>>>  	yy  	to YANK a line (yy is a special case of the y command)
+>>>	3j	to move down 3 lines
+>>>	p	(lower p) to PUT the yanked text after the cursor
+
+	PRACTICE line.  Copy and Paste this line to the bottom of the
+	paragraph.  Here is some filler, feel free to copy and paste the
+	text in this practice region.  Remember that  u  undoes the last
+	action.  END OF PRACTICE
+
+Please note that copy, cutting, and pasting large blocks of text may
+significantly alter the tutorial file.  Remember that you can always get
+a new copy of the tutorial file and that  u  UNDOes your last change.
+
+Here are some examples which show the similarity between  y  and  d .
+
+	yw	YANK to the beginning of the next WORD
+	y$	YANK to the end of the line
+	y)	YANK to the beginning of the next sentence 
+	yy	YANK a line 
+
+Here are some more examples using commands from tutorial #2.
+
+	yL	YANK from here to the lowest point of the window
+	y/and	YANK from here to the word "and"
+	y2}	YANK 2 paragraphs
+
+>>>  Experiment with  yw  y4w  y2}  y3y  and  y$  on the paragraph
+>>>  provided below.  Copy text AND use  p  or  P  to paste it.
+
+	PRACTICE line.  Copy and Paste this line to the bottom of the
+	paragraph.  Here is some filler, feel free to copy and paste
+	the text in this practice region.  Remember that  u  undoes the
+        last action.  END OF PRACTICE
+
+
+SAVING WITHOUT QUITTING
+-----------------------
+With  ZZ  you save changes and quit vi.  With :w  you can save and not
+quit vi.  It is a safe practice to save changes to a file regularly.
+This reduces re-typing in the event your computer crashes.
+
+    :w<RETURN>	WRITE contents of the file (without quitting)
+		(type a colon, type w , then press the RETURN key)
+
+
+SUMMARY
+-------
+
+    #movement	repeat movement # times
+
+    dmovement	DELETE to where "movement" command specifies
+    d#movement	DELETE to where the  #movement  command specifies
+		(e.g.  dw  d3w )
+
+    ymovement	YANK to where "movement" command specifies
+    y#movement	YANK to where the  #movement  command specifies
+		(e.g.  yw  y3w )
+
+	P	(upper p) PUT the contents of the buffer before the cursor
+	p	(lower p) PUT the contents of the buffer after the cursor
+
+    :w<RETURN>	WRITE contents of the file (without quitting)
+		(type a colon, type w , then press the RETURN key)
+
+
+You are now prepared to handle most cutting, copying and pasting tasks
+which may arise.  If you practice what you've learned you'll find editing
+in vi to be fast and convenient.
+
+If you wish to exit this tutorial now, you may type  :q!
+
+Copyright (c) 1992 Jill Kliger and Wesley Craig.  All Rights Reserved.

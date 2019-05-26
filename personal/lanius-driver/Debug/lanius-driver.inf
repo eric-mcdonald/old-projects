@@ -1,0 +1,89 @@
+;
+; lanius-driver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=lanius-driver.cat
+DriverVer = 03/04/2018,0.42.41.389
+
+[DestinationDirs]
+DefaultDestDir = 12
+lanius-driver_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+lanius-driver.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTx86
+
+[Standard.NTx86]
+%lanius-driver.DeviceDesc%=lanius-driver_Device, Root\lanius-driver ; TODO: edit hw-id
+
+[lanius-driver_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+lanius-driver.sys
+
+;-------------- Service installation
+[lanius-driver_Device.NT.Services]
+AddService = lanius-driver,%SPSVCINST_ASSOCSERVICE%, lanius-driver_Service_Inst
+
+; -------------- lanius-driver driver install sections
+[lanius-driver_Service_Inst]
+DisplayName    = %lanius-driver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\lanius-driver.sys
+
+;
+;--- lanius-driver_Device Coinstaller installation ------
+;
+
+[lanius-driver_Device.NT.CoInstallers]
+AddReg=lanius-driver_Device_CoInstaller_AddReg
+CopyFiles=lanius-driver_Device_CoInstaller_CopyFiles
+
+[lanius-driver_Device_CoInstaller_AddReg]
+;
+
+
+[lanius-driver_Device_CoInstaller_CopyFiles]
+;
+
+
+[lanius-driver_Device.NT.Wdf]
+KmdfService =  lanius-driver, lanius-driver_wdfsect
+[lanius-driver_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "lanius-driver Installation Disk"
+lanius-driver.DeviceDesc = "lanius-driver Device"
+lanius-driver.SVCDESC = "lanius-driver Service"

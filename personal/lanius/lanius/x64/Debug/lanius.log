@@ -1,0 +1,19 @@
+﻿  stdafx.cpp
+  window_rect.cc
+  window_id.cc
+  string_util.cc
+  render_data.cc
+  overlay_test.cc
+  overlay.cc
+  native_util_test.cc
+  native_util.cc
+  memory_stream.cc
+  lanius.cpp
+  language.cc
+  inject_test.cc
+  game.cc
+  font.cc
+  impl_test.cc
+  Generating Code...
+  lanius.vcxproj -> D:\lanius\lanius\x64\Debug\lanius.exe
+  lanius.vcxproj -> D:\lanius\lanius\x64\Debug\lanius.pdb (Full PDB)

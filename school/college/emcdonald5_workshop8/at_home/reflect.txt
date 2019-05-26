@@ -1,0 +1,33 @@
+Name: Eric McDonald
+Student ID: 153581160
+Date: 9:49 PM 2019-03-27
+
+1. The advantage that smart pointer syntax provides.
+Smart pointer syntax implements RAII so that you don't have to. Usually with a pointer, you would have to deallocate it/manage its memory yourself after you are done with it. Modern C++'s STL adds unique_ptr and shared_ptr. Also, it can help prevent memory leaks as in a try-catch for example, if an exception is caught before the allocated pointer gets deleted, it can cause a memory leak:
+					Product *product = new Product(desc[i].desc, price[j].price);
+					product->AssertState();  // This function throws an exception if Product#price is negative, causing the control flow to exit all the way to the innermost try-catch. This means that product would not get deleted!
+					priceList += product;
+					delete product;
+					product = nullptr;
+
+versus:
+
+					std::unique_ptr<Product> product(new Product(desc[i].desc, price[j].price));
+					product->AssertState();  // This function can throw exceptions all it wants. std::unique_ptr is managing the memory for Product for us! new Product(desc[i].desc, price[j].price) will be automatically deallocated when 'product' out of scope (no longer needed by the program).
+					priceList += product;
+
+2. List the difference between raw and smart pointer syntax in your solution.
+The difference between raw and smart pointer syntax is that with a raw pointer, you would have to manage the memory yourself: properly handle copying operations and deallocation. STL classes like unique_ptr and shared_ptr handle this for us:
+MyStinkyRawPtr *raw_ptr = new MyStinkyRawPtr();
+DoSomething(raw_ptr);
+delete raw_ptr;  // Need to know the program's control flow (knowing things like if a function will fail and things like thrown exceptions), and deallocate it when its no longer in use.
+raw_ptr = nullptr;  // I like setting deallocated pointers to null afterwards to idiot-proof my code. This isn't really needed.
+
+versus:
+
+std::unique_ptr<MyCoolSmartPtr> cool_ptr(new MyCoolSmartPtr());
+DoSomething(cool_ptr);
+// cool_ptr will be automatically deallocated when it goes out of scope.
+
+Include all corrections to the Quiz(zes) you have received (30%).
+There are no corrections to make.

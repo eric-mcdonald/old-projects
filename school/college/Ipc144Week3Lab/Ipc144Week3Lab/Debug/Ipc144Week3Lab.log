@@ -1,0 +1,5 @@
+﻿  temps.c
+c:\users\eric_\onedrive\documents\visual studio 2015\projects\schoolprojects\ipc144week3lab\ipc144week3lab\temps.c(19): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+  Ipc144Week3Lab.vcxproj -> C:\Users\eric_\OneDrive\Documents\Visual Studio 2015\Projects\SchoolProjects\Ipc144Week3Lab\Debug\Ipc144Week3Lab.exe
+  Ipc144Week3Lab.vcxproj -> C:\Users\eric_\OneDrive\Documents\Visual Studio 2015\Projects\SchoolProjects\Ipc144Week3Lab\Debug\Ipc144Week3Lab.pdb (Full PDB)

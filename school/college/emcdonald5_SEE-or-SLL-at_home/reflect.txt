@@ -1,0 +1,50 @@
+1. The difference between the implementations of a functor and a lambda expression.
+A functor adds complexity because you can have member variables and is less trivial to programmers than a lambda expression. Also, the lambda expression I written:
+[](float value) {
+			if (value >= 90.0f) {
+				return "A+";
+			}
+			else if (value >= 80.0f) {
+				return "A ";
+			}
+			else if (value >= 75.0f) {
+				return "B+";
+			}
+			else if (value >= 70.0f) {
+				return "B ";
+			}
+			else if (value >= 65.0f) {
+				return "C+";
+			}
+			else if (value >= 60.0f) {
+				return "C ";
+			}
+			else if (value >= 55.0f) {
+				return "D+";
+			}
+			else if (value >= 50.0f) {
+				return "D ";
+			}
+			else {
+				return "F ";
+			}
+		}
+does not need any member variables (and probably never will), so it is more appropriate to be a lambda expression. Also, a functor can imply that the convert function has a state of some kind as it can hold member variables.
+
+2. A list of the exceptions that you have reported and the cases where you terminated execution normally.
+I catch exceptions that are thrown in an instance of sict::Error<size_t> (I believe its better to have an exception/error container, rather than just throwing the variable itself). In each catch block that catches those errors, I exit with an error code that is not zero. I also catch any other exceptions and just exit the program with an abnormal termination code. The following catch blocks is where I terminate abnormally:
+	catch (sict::Error<size_t> &error) {
+		std::cerr << error.GetErrorTxt() << std::endl;
+		exit(1);
+	}
+	catch (...) {
+		exit(2);
+	}
+	} catch (sict::Error<size_t> &error) {
+		std::cerr << error.GetErrorTxt() << std::endl;
+		exit(3);
+	}
+	catch (...) {
+		exit(4);
+	}
+Lastly, I terminate without a bad exit code if no error occurs.

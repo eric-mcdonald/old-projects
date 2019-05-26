@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <SignMode>TestSign</SignMode>
+    <TestCertificate>CN="WDKTestCert eric_,131502572912951053" | 419B8B4CA08A6A82B2407FCCB805740C4408E0D3</TestCertificate>
+  </PropertyGroup>
+</Project>

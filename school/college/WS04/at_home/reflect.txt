@@ -1,0 +1,8 @@
+1. The difference between the implementations of a composition and an aggregation.
+The difference between composition and aggregation is that a composition owns object and both the object and the container die (get deleted) when the container is deleted, while an aggregation simply uses an object that it didn't allocate. For example:
+			messages_sz = messages_sz_;
+			messages = new Message*[messages_sz_];
+			memcpy(messages, messages_, messages_sz_ * sizeof(Message*));
+Creates copies of the pointer-to-Messages in the passed messages_.
+2. The difference between the implementations of move and copy functions in a composition and an aggregation.
+The difference between the implementations of move and copy functions in a composition and an aggregation is that in a composition, you must delete the objects before you copy the source container's objects, while in an aggregation you can just copy them without having to worry about memory management.
