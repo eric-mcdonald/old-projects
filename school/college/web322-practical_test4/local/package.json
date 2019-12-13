@@ -3,7 +3,7 @@
   "author": "Eric McDonald",
   "dependencies": {
     "express": "^4.16.4",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.43.0"
