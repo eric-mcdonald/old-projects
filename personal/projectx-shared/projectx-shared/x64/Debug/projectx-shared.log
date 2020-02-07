@@ -1,0 +1,19 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  url_helper.cpp
+  timer.cpp
+  string_util.cpp
+  shared_mem.cpp
+  px_file.cpp
+  px_client.cpp
+  projectx-shared.cpp
+  native_util.cpp
+  IRCThread.cpp
+  IRCSocket.cpp
+  IRCHandler.cpp
+  IRCClient.cpp
+  hide_windows_hook.cpp
+  Generating Code...
+     Creating library D:\project_bands\projectx-shared\x64\Debug\projectx-shared.lib and object D:\project_bands\projectx-shared\x64\Debug\projectx-shared.exp
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\x64\Debug\projectx-shared.dll
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\x64\Debug\projectx-shared.pdb (Full PDB)

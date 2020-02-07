@@ -1,0 +1,21 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  hide_windows_hook.cpp
+  IRCClient.cpp
+  IRCHandler.cpp
+  IRCSocket.cpp
+  IRCThread.cpp
+  native_util.cpp
+  projectx-shared.cpp
+  px_client.cpp
+  px_file.cpp
+  shared_mem.cpp
+  string_util.cpp
+  timer.cpp
+  url_helper.cpp
+     Creating library D:\project_bands\projectx-shared\Release\projectx-shared.lib and object D:\project_bands\projectx-shared\Release\projectx-shared.exp
+  Generating code
+  All 1376 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\Release\projectx-shared.dll
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\Release\projectx-shared.pdb (Full PDB)

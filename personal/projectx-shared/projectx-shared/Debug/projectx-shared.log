@@ -1,0 +1,21 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  url_helper.cpp
+  timer.cpp
+  string_util.cpp
+  shared_mem.cpp
+  px_file.cpp
+  px_client.cpp
+  projectx-shared.cpp
+  native_util.cpp
+  IRCThread.cpp
+  IRCSocket.cpp
+  IRCHandler.cpp
+  IRCClient.cpp
+  hide_windows_hook.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
+     Creating library D:\project_bands\projectx-shared\Debug\projectx-shared.lib and object D:\project_bands\projectx-shared\Debug\projectx-shared.exp
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\Debug\projectx-shared.dll
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\Debug\projectx-shared.pdb (Full PDB)
+d:\project_bands\projectx-shared\projectx-shared\dllmain.cpp(25): warning C28159: Consider using 'GetTickCount64' instead of 'GetTickCount'. Reason: GetTickCount overflows roughly every 49 days.  Code that does not take that into account can loop indefinitely.  GetTickCount64 operates on 64 bit values and does not have that problem

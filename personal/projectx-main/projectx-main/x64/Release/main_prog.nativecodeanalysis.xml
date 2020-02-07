@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+      <FILENAME>main_prog.cpp</FILENAME>
+      <LINE>238</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>6246</DEFECTCODE>
+    <DESCRIPTION>Local declaration of 'error' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '196' of 'd:\project_bands\projectx-main\projectx-main\main_prog.cpp'.</DESCRIPTION>
+    <FUNCTION>projx::MainProg::UpdateClickUrls</FUNCTION>
+    <DECORATED>?UpdateClickUrls@MainProg@projx@@AEAAHXZ</DECORATED>
+    <FUNCLINE>195</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>main_prog.cpp</FILENAME>
+        <LINE>196</LINE>
+        <COLUMN>18</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

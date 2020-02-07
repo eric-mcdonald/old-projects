@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+      <FILENAME>click_record.cpp</FILENAME>
+      <LINE>80</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'result' could be '0':  this does not adhere to the specification for the function 'gmtime_s'. </DESCRIPTION>
+    <FUNCTION>projx::TimeGetCurrentGm</FUNCTION>
+    <DECORATED>?TimeGetCurrentGm@projx@@YAHPAUtm@@@Z</DECORATED>
+    <FUNCLINE>72</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>click_record.cpp</FILENAME>
+        <LINE>73</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'result' may be NULL (Enter this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>click_record.cpp</FILENAME>
+        <LINE>74</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>click_record.cpp</FILENAME>
+        <LINE>76</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>click_record.cpp</FILENAME>
+        <LINE>77</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'current_time==-1' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>click_record.cpp</FILENAME>
+        <LINE>80</LINE>
+        <COLUMN>12</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'result' is an In/Out argument to 'gmtime_s' (declared at c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h:559)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-main\projectx-main\</FILEPATH>
+        <FILENAME>click_record.cpp</FILENAME>
+        <LINE>80</LINE>
+        <COLUMN>12</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'result' should not be NULL, because this is not consistent with the SAL annotation on 'gmtime_s'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

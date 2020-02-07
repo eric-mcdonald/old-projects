@@ -1,0 +1,12 @@
+﻿  main.cpp
+  dropper.cpp
+  stdafx.cpp
+LINK : warning C4727: PCH named d:\project_bands\projectx-dropper\projectx-dropper\release\projectx-dropper.pch with same timestamp found in d:\project_bands\projectx-dropper\projectx-dropper\release\dropper.obj and d:\project_bands\projectx-dropper\projectx-dropper\release\main.obj.  Using first PCH.
+LINK : warning C4727: PCH named d:\project_bands\projectx-dropper\projectx-dropper\release\projectx-dropper.pch with same timestamp found in d:\project_bands\projectx-dropper\projectx-dropper\release\stdafx.obj and d:\project_bands\projectx-dropper\projectx-dropper\release\main.obj.  Using first PCH.
+  Generating code
+  2 of 254 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    35 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  projectx-dropper.vcxproj -> D:\project_bands\projectx-dropper\Release\projectx-dropper.exe
+  projectx-dropper.vcxproj -> D:\project_bands\projectx-dropper\Release\projectx-dropper.pdb (Full PDB)

@@ -1,0 +1,23 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  hide_windows_hook.cpp
+  IRCClient.cpp
+  IRCHandler.cpp
+  IRCSocket.cpp
+  IRCThread.cpp
+  native_util.cpp
+  projectx-shared.cpp
+  px_client.cpp
+  px_file.cpp
+  shared_mem.cpp
+  string_util.cpp
+  timer.cpp
+  url_helper.cpp
+     Creating library D:\project_bands\projectx-shared\x64\Release\projectx-shared.lib and object D:\project_bands\projectx-shared\x64\Release\projectx-shared.exp
+  Generating code
+  12 of 1376 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    58 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\x64\Release\projectx-shared.dll
+  projectx-shared.vcxproj -> D:\project_bands\projectx-shared\x64\Release\projectx-shared.pdb (Full PDB)

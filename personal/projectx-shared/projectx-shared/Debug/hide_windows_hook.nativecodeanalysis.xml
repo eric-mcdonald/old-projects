@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\project_bands\projectx-shared\projectx-shared\</FILEPATH>
+      <FILENAME>hide_windows_hook.cpp</FILENAME>
+      <LINE>266</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>6246</DEFECTCODE>
+    <DESCRIPTION>Local declaration of 'error' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '259' of 'd:\project_bands\projectx-shared\projectx-shared\hide_windows_hook.cpp'.</DESCRIPTION>
+    <FUNCTION>projx::HideWindowsHook::AddTargetProc</FUNCTION>
+    <DECORATED>?AddTargetProc@HideWindowsHook@projx@@QAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>253</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-shared\projectx-shared\</FILEPATH>
+        <FILENAME>hide_windows_hook.cpp</FILENAME>
+        <LINE>259</LINE>
+        <COLUMN>18</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>d:\project_bands\projectx-shared\projectx-shared\</FILEPATH>
+      <FILENAME>hide_windows_hook.cpp</FILENAME>
+      <LINE>288</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>6246</DEFECTCODE>
+    <DESCRIPTION>Local declaration of 'error' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '281' of 'd:\project_bands\projectx-shared\projectx-shared\hide_windows_hook.cpp'.</DESCRIPTION>
+    <FUNCTION>projx::HideWindowsHook::RemoveTargetProc</FUNCTION>
+    <DECORATED>?RemoveTargetProc@HideWindowsHook@projx@@QAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>275</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>d:\project_bands\projectx-shared\projectx-shared\</FILEPATH>
+        <FILENAME>hide_windows_hook.cpp</FILENAME>
+        <LINE>281</LINE>
+        <COLUMN>18</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

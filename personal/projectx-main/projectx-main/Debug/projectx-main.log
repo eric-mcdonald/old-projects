@@ -1,0 +1,16 @@
+﻿  stdafx.cpp
+  web_browser_manager.cpp
+  web_browser_info.cpp
+  screenshot_helper.cpp
+  projectx-main.cpp
+  main_prog.cpp
+  click_record.cpp
+  audio_session_data.cpp
+  app_volume_ctrl.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
+  projectx-main.vcxproj -> D:\project_bands\projectx-main\Debug\projectx-main.exe
+  projectx-main.vcxproj -> D:\project_bands\projectx-main\Debug\projectx-main.pdb (Full PDB)
+d:\project_bands\projectx-main\projectx-main\click_record.cpp(80): warning C6387: 'result' could be '0':  this does not adhere to the specification for the function 'gmtime_s'. 
+d:\project_bands\projectx-main\projectx-main\web_browser_info.cpp(31): warning C6101: Returning uninitialized memory '*ppszOutFile'.  A successful path through the function does not set the named _Out_ parameter. 
+d:\project_bands\projectx-main\projectx-main\web_browser_info.cpp(31): warning C6054: String '*ppszOutFile' might not be zero-terminated.
