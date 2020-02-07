@@ -6,7 +6,7 @@
     "npm": "^6.9.0",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.43.0"
+    "sequelize": "^5.15.1"
   },
   "scripts": {
     "start": "node server.js"
