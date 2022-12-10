@@ -2,7 +2,7 @@
   "name": "practical4",
   "author": "Eric McDonald",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "npm": "^6.9.0",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
